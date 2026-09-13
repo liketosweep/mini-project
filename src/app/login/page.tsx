@@ -111,7 +111,7 @@ export default function LoginPage() {
                 type="password"
                 autoComplete="current-password"
                 disabled={isSubmitting}
-                placeholder="��������"
+                placeholder="••••••••"
                 {...register('password')}
                 className="w-full rounded-lg border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
               />

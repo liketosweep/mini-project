@@ -117,11 +117,10 @@ export function LiveLeaderboard({
           return (
             <div
               key={p.id}
-              className={`py-3.5 px-3 flex items-center justify-between gap-3 transition-colors ${
-                isMe
+              className={`py-3.5 px-3 flex items-center justify-between gap-3 transition-colors ${isMe
                   ? 'bg-brand-50/50 dark:bg-brand-950/20 border-l-4 border-brand-600 rounded-r-xl'
                   : 'hover:bg-sand-50/70 dark:hover:bg-brand-800/30 rounded-xl'
-              }`}
+                }`}
             >
               {/* Left: Rank & User Details */}
               <div className="flex items-center gap-3 min-w-0">
@@ -171,14 +170,13 @@ export function LiveLeaderboard({
                 {/* Streak Badge */}
                 <div className="flex items-center gap-1 text-xs">
                   <Flame
-                    className={`h-3.5 w-3.5 ${
-                      p.currentStreak > 0
+                    className={`h-3.5 w-3.5 ${p.currentStreak > 0
                         ? 'text-orange-500 fill-orange-500'
                         : 'text-sand-300 dark:text-sand-600'
-                    }`}
+                      }`}
                   />
                   <span className="font-semibold text-zinc-700 dark:text-sand-300">
-                    {p.currentStreak > 0 ? `${p.currentStreak}d` : '�'}
+                    {p.currentStreak > 0 ? `${p.currentStreak}d` : '•'}
                   </span>
                 </div>
 

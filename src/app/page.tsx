@@ -46,7 +46,7 @@ export default async function HomePage() {
       <main className="flex-1 mx-auto flex max-w-4xl flex-col items-center justify-center px-4 py-16 text-center sm:py-24">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 dark:border-brand-900/60 dark:bg-brand-950/40 dark:text-brand-300 mb-6">
           <Shield className="h-3.5 w-3.5" />
-          <span>College Mini-Project � Accountability & Challenges</span>
+          <span>College Mini-Project • Accountability & Challenges</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white max-w-2xl">
@@ -109,7 +109,7 @@ export default async function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-sand-200 bg-white py-6 text-center text-xs text-zinc-500 dark:border-brand-800 dark:bg-brand-900">
-        <p>Habit Arena � College Mini-Project � Next.js 16 + Supabase</p>
+        <p>Habit Arena • College Mini-Project • Next.js 16 + Supabase</p>
       </footer>
     </div>
   )

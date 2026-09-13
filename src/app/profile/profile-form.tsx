@@ -107,7 +107,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
             {profile.virtual_points} points
           </span>
           <span className="text-xs text-gold-700/80 dark:text-gold-400/70 ml-auto">
-            (Read-only � Earned via challenge room wins)
+            (Read-only • Earned via challenge room wins)
           </span>
         </div>
         <p className="text-[11px] text-zinc-500">
