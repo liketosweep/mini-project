@@ -159,6 +159,46 @@ create policy "Users can insert their own habit logs"
   to authenticated
   with check (auth.uid() = user_id);
 
+-- Helper functions (SECURITY DEFINER) used by the SELECT policies below.
+-- rooms, room_participants, and room_logs all need to check membership in
+-- room_participants and/or ownership of rooms from each other's policies.
+-- Querying those RLS-protected tables directly from within a policy causes
+-- Postgres to re-evaluate the same policy chain forever (42P17 infinite
+-- recursion). Routing every cross-table check through a SECURITY DEFINER
+-- function breaks the cycle: the function runs as its owner, which bypasses
+-- RLS on the table it queries, so it never re-triggers the calling policy.
+create or replace function public.is_room_participant(p_room_id uuid, p_user_id uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public, pg_temp
+as $$
+  select exists (
+    select 1 from public.room_participants
+    where room_id = p_room_id and user_id = p_user_id
+  );
+$$;
+
+revoke all on function public.is_room_participant from public;
+grant execute on function public.is_room_participant to authenticated;
+
+create or replace function public.is_room_creator(p_room_id uuid, p_user_id uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public, pg_temp
+as $$
+  select exists (
+    select 1 from public.rooms
+    where id = p_room_id and creator_id = p_user_id
+  );
+$$;
+
+revoke all on function public.is_room_creator from public;
+grant execute on function public.is_room_creator to authenticated;
+
 -- ROOMS: SELECT ONLY (No direct INSERT or UPDATE from client)
 -- Zero public browsing: only creator and participants can read
 drop policy if exists "Users can view rooms they created or joined" on public.rooms;
@@ -166,11 +206,8 @@ create policy "Users can view rooms they created or joined"
   on public.rooms for select
   to authenticated
   using (
-    creator_id = auth.uid() or
-    exists (
-      select 1 from public.room_participants rp
-      where rp.room_id = rooms.id and rp.user_id = auth.uid()
-    )
+    creator_id = auth.uid()
+    or public.is_room_participant(id, auth.uid())
   );
 
 -- Direct client INSERT into public.rooms is BLOCKED.
@@ -187,14 +224,8 @@ create policy "Participants can view room roster"
   on public.room_participants for select
   to authenticated
   using (
-    exists (
-      select 1 from public.room_participants rp
-      where rp.room_id = room_participants.room_id and rp.user_id = auth.uid()
-    ) or
-    exists (
-      select 1 from public.rooms r
-      where r.id = room_participants.room_id and r.creator_id = auth.uid()
-    )
+    public.is_room_participant(room_id, auth.uid())
+    or public.is_room_creator(room_id, auth.uid())
   );
 
 -- Direct client INSERT into public.room_participants is BLOCKED.
@@ -207,10 +238,7 @@ create policy "Participants can view room check-ins"
   on public.room_logs for select
   to authenticated
   using (
-    exists (
-      select 1 from public.room_participants rp
-      where rp.room_id = room_logs.room_id and rp.user_id = auth.uid()
-    )
+    public.is_room_participant(room_id, auth.uid())
   );
 
 -- Direct client INSERT into public.room_logs is BLOCKED.
@@ -648,3 +676,15 @@ begin
   end if;
 end
 $$;
+
+
+-- ==============================================================================
+-- TABLE-LEVEL GRANTS (Required since "Automatically expose new tables" is disabled)
+-- ==============================================================================
+
+grant select on public.profiles to authenticated;
+grant select, insert, update on public.habits to authenticated;
+grant select on public.habit_logs to authenticated;
+grant select on public.rooms to authenticated;
+grant select on public.room_participants to authenticated;
+grant select on public.room_logs to authenticated;
