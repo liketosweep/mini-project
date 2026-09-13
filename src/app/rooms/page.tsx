@@ -24,10 +24,14 @@ export default async function RoomsPage() {
     .single()
 
   // 2. Fetch Rooms (RLS automatically scopes to rooms created or joined by user)
-  const { data: rooms } = await supabase
+  const { data: rooms, error: roomsErr } = await supabase
     .from('rooms')
     .select('*')
     .order('created_at', { ascending: false })
+
+  if (roomsErr) {
+    console.error('[rooms] Failed to fetch rooms list:', roomsErr.code, roomsErr.message)
+  }
 
   const userRooms = rooms || []
 

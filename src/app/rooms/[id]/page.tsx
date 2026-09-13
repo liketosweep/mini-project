@@ -40,6 +40,9 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
     .maybeSingle()
 
   if (roomErr || !room) {
+    if (roomErr) {
+      console.error(`[rooms/${id}] Failed to fetch room:`, roomErr.code, roomErr.message)
+    }
     return (
       <div className="min-h-screen bg-sand-50 dark:bg-brand-950 flex flex-col">
         <Navbar profile={profile} />
@@ -173,9 +176,9 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
           currentUserProfile={
             profile
               ? {
-                  username: profile.username,
-                  display_name: profile.display_name,
-                }
+                username: profile.username,
+                display_name: profile.display_name,
+              }
               : null
           }
         />

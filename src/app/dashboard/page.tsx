@@ -45,11 +45,15 @@ export default async function DashboardPage() {
     .order('created_at', { ascending: false })
 
   // 3. Fetch Challenge Rooms (RLS automatically scopes to user's rooms)
-  const { data: rooms } = await supabase
+  const { data: rooms, error: roomsErr } = await supabase
     .from('rooms')
     .select('*')
     .order('created_at', { ascending: false })
     .limit(3)
+
+  if (roomsErr) {
+    console.error('[dashboard] Failed to fetch rooms:', roomsErr.code, roomsErr.message)
+  }
 
   const userRooms = rooms || []
 
@@ -186,11 +190,10 @@ export default async function DashboardPage() {
                     <div className="flex items-center justify-between pt-1 text-xs">
                       <div className="flex items-center gap-1">
                         <Flame
-                          className={`h-4 w-4 ${
-                            streak > 0
-                              ? 'text-orange-500 fill-orange-500'
-                              : 'text-zinc-400'
-                          }`}
+                          className={`h-4 w-4 ${streak > 0
+                            ? 'text-orange-500 fill-orange-500'
+                            : 'text-zinc-400'
+                            }`}
                         />
                         <span className="font-bold text-zinc-900 dark:text-white">
                           {streak} day streak
