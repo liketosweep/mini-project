@@ -652,7 +652,6 @@ $$;
 -- ==============================================================================
 -- TABLE-LEVEL GRANTS (Required since "Automatically expose new tables" is disabled)
 -- ==============================================================================
-
 grant select on public.profiles to authenticated;
 grant select on public.habits to authenticated;
 grant select on public.habit_logs to authenticated;
