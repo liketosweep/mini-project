@@ -648,3 +648,14 @@ begin
   end if;
 end
 $$;
+
+-- ==============================================================================
+-- TABLE-LEVEL GRANTS (Required since "Automatically expose new tables" is disabled)
+-- ==============================================================================
+
+grant select on public.profiles to authenticated;
+grant select on public.habits to authenticated;
+grant select on public.habit_logs to authenticated;
+grant select on public.rooms to authenticated;
+grant select on public.room_participants to authenticated;
+grant select on public.room_logs to authenticated;
