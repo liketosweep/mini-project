@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -81,7 +81,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
 
       {/* Read-Only Account Email */}
       <div className="space-y-1.5">
-        <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300">
+        <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300">
           <span>Account Email</span>
           <Lock className="h-3 w-3 text-zinc-400" />
         </label>
@@ -90,24 +90,24 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
           value={userEmail}
           readOnly
           disabled
-          className="w-full rounded-lg border border-zinc-200 bg-zinc-100 px-3.5 py-2.5 text-sm text-zinc-500 cursor-not-allowed dark:border-zinc-800 dark:bg-zinc-800/60 dark:text-zinc-400"
+          className="w-full rounded-lg border border-sand-200 bg-sand-100 px-3.5 py-2.5 text-sm text-zinc-500 cursor-not-allowed dark:border-brand-800 dark:bg-brand-800/60 dark:text-sand-400"
         />
         <p className="text-[11px] text-zinc-500">Email is managed via your Supabase authentication account.</p>
       </div>
 
       {/* Read-Only Virtual Points */}
       <div className="space-y-1.5">
-        <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300">
+        <label className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300">
           <span>Virtual Reward Points</span>
           <Lock className="h-3 w-3 text-zinc-400" />
         </label>
-        <div className="flex items-center gap-3 rounded-lg border border-amber-200 bg-amber-50/50 px-3.5 py-2.5 text-sm dark:border-amber-900/40 dark:bg-amber-950/20">
-          <Trophy className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-          <span className="font-bold text-amber-900 dark:text-amber-200">
+        <div className="flex items-center gap-3 rounded-lg border border-gold-200 bg-gold-50/50 px-3.5 py-2.5 text-sm dark:border-gold-900/40 dark:bg-gold-950/20">
+          <Trophy className="h-4 w-4 text-gold-600 dark:text-gold-400" />
+          <span className="font-bold text-gold-900 dark:text-gold-200">
             {profile.virtual_points} points
           </span>
-          <span className="text-xs text-amber-700/80 dark:text-amber-400/70 ml-auto">
-            (Read-only • Earned via challenge room wins)
+          <span className="text-xs text-gold-700/80 dark:text-gold-400/70 ml-auto">
+            (Read-only � Earned via challenge room wins)
           </span>
         </div>
         <p className="text-[11px] text-zinc-500">
@@ -119,7 +119,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
       <div className="space-y-1.5">
         <label
           htmlFor="display_name"
-          className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+          className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
         >
           Display Name
         </label>
@@ -128,7 +128,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
           type="text"
           disabled={isSubmitting}
           {...register('display_name')}
-          className="w-full rounded-lg border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+          className="w-full rounded-lg border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
         />
         {errors.display_name && (
           <p className="text-xs text-red-600 dark:text-red-400">{errors.display_name.message}</p>
@@ -139,7 +139,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
       <div className="space-y-1.5">
         <label
           htmlFor="username"
-          className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+          className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
         >
           Username
         </label>
@@ -150,7 +150,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
             type="text"
             disabled={isSubmitting}
             {...register('username')}
-            className="w-full rounded-lg border border-zinc-300 pl-8 pr-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+            className="w-full rounded-lg border border-sand-300 pl-8 pr-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
           />
         </div>
         {errors.username && (
@@ -163,7 +163,7 @@ export function ProfileForm({ profile, userEmail }: ProfileFormProps) {
         <button
           type="submit"
           disabled={isSubmitting || !isDirty}
-          className="flex items-center gap-2 rounded-lg bg-indigo-600 py-2.5 px-5 text-sm font-semibold text-white shadow hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 disabled:opacity-50 transition-colors"
+          className="flex items-center gap-2 rounded-lg bg-gold-500 py-2.5 px-5 text-sm font-semibold text-white shadow hover:bg-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 disabled:opacity-50 transition-colors"
         >
           {isSubmitting ? (
             <>

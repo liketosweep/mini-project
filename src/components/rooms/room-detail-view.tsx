@@ -211,14 +211,14 @@ export function RoomDetailView({
         )
       case 'completed':
         return (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700 border border-amber-200 dark:bg-amber-950/40 dark:border-amber-900 dark:text-amber-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-50 px-3 py-1 text-xs font-bold text-gold-700 border border-gold-200 dark:bg-gold-950/40 dark:border-gold-900 dark:text-gold-300">
             <Trophy className="h-3.5 w-3.5" />
             Completed
           </span>
         )
       default:
         return (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1 text-xs font-bold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-sand-100 px-3 py-1 text-xs font-bold text-zinc-700 dark:bg-brand-800 dark:text-sand-300">
             {room.status}
           </span>
         )
@@ -240,7 +240,7 @@ export function RoomDetailView({
         <div>
           <Link
             href="/rooms"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 hover:text-zinc-900 dark:text-sand-400 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Back to Challenges</span>
@@ -248,21 +248,21 @@ export function RoomDetailView({
         </div>
 
         {/* Challenge Header Card */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-4">
+        <div className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               {statusBadge()}
               {isCreator && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-semibold text-indigo-700 dark:bg-indigo-950/50 dark:text-indigo-300">
+                <span className="inline-flex items-center gap-1 rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700 dark:bg-brand-950/50 dark:text-brand-300">
                   <ShieldCheck className="h-3.5 w-3.5" />
                   You are Host
                 </span>
               )}
             </div>
 
-            <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+            <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-sand-400">
               <span>Invite Code:</span>
-              <span className="font-mono font-bold text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 rounded">
+              <span className="font-mono font-bold text-zinc-800 dark:text-sand-200 bg-sand-100 dark:bg-brand-800 px-2 py-0.5 rounded">
                 {room.invite_code}
               </span>
             </div>
@@ -273,7 +273,7 @@ export function RoomDetailView({
               {room.name}
             </h1>
             {room.description && (
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-3xl">
+              <p className="text-sm text-zinc-600 dark:text-sand-400 max-w-3xl">
                 {room.description}
               </p>
             )}
@@ -302,56 +302,56 @@ export function RoomDetailView({
           {/* Statistics Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             {/* Reward Pool */}
-            <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-3.5 dark:border-amber-900/40 dark:bg-amber-950/20 space-y-0.5">
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-amber-800 dark:text-amber-300">
-                <Trophy className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
+            <div className="rounded-xl border border-gold-200 bg-gold-50/60 p-3.5 dark:border-gold-900/40 dark:bg-gold-950/20 space-y-0.5">
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-gold-800 dark:text-gold-300">
+                <Trophy className="h-3.5 w-3.5 text-gold-600 dark:text-gold-400" />
                 <span>Reward Pool</span>
               </div>
-              <p className="text-xl font-extrabold text-amber-900 dark:text-amber-200">
+              <p className="text-xl font-extrabold text-gold-900 dark:text-gold-200">
                 {room.points_pool} <span className="text-xs font-normal">pts</span>
               </p>
-              <p className="text-[10px] text-amber-700/80 dark:text-amber-400/80">
+              <p className="text-[10px] text-gold-700/80 dark:text-gold-400/80">
                 Virtual points pool
               </p>
             </div>
 
             {/* Entry Stake */}
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50/60 p-3.5 dark:border-zinc-800 dark:bg-zinc-800/30 space-y-0.5">
-              <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-400">
+            <div className="rounded-xl border border-sand-200 bg-sand-50/60 p-3.5 dark:border-brand-800 dark:bg-brand-800/30 space-y-0.5">
+              <span className="text-xs font-semibold text-zinc-600 dark:text-sand-400">
                 Entry Stake
               </span>
               <p className="text-xl font-bold text-zinc-900 dark:text-white">
                 {room.entry_points} <span className="text-xs font-normal">pts</span>
               </p>
-              <p className="text-[10px] text-zinc-500 dark:text-zinc-400">
+              <p className="text-[10px] text-zinc-500 dark:text-sand-400">
                 No balance deducted
               </p>
             </div>
 
             {/* Dates */}
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50/60 p-3.5 dark:border-zinc-800 dark:bg-zinc-800/30 space-y-0.5">
-              <div className="flex items-center gap-1 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
-                <Calendar className="h-3.5 w-3.5 text-indigo-600" />
+            <div className="rounded-xl border border-sand-200 bg-sand-50/60 p-3.5 dark:border-brand-800 dark:bg-brand-800/30 space-y-0.5">
+              <div className="flex items-center gap-1 text-xs font-semibold text-zinc-600 dark:text-sand-400">
+                <Calendar className="h-3.5 w-3.5 text-brand-600" />
                 <span>Active Period</span>
               </div>
               <p className="text-xs font-bold text-zinc-900 dark:text-white truncate">
                 {room.start_date}
               </p>
-              <p className="text-[10px] text-zinc-500 dark:text-zinc-400">
+              <p className="text-[10px] text-zinc-500 dark:text-sand-400">
                 to {room.end_date}
               </p>
             </div>
 
             {/* Deadline */}
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50/60 p-3.5 dark:border-zinc-800 dark:bg-zinc-800/30 space-y-0.5">
-              <div className="flex items-center gap-1 text-xs font-semibold text-zinc-600 dark:text-zinc-400">
-                <Clock className="h-3.5 w-3.5 text-indigo-600" />
+            <div className="rounded-xl border border-sand-200 bg-sand-50/60 p-3.5 dark:border-brand-800 dark:bg-brand-800/30 space-y-0.5">
+              <div className="flex items-center gap-1 text-xs font-semibold text-zinc-600 dark:text-sand-400">
+                <Clock className="h-3.5 w-3.5 text-brand-600" />
                 <span>Join Deadline</span>
               </div>
               <p className="text-xs font-bold text-zinc-900 dark:text-white truncate">
                 {deadlineDate}
               </p>
-              <p className="text-[10px] text-zinc-500 dark:text-zinc-400">
+              <p className="text-[10px] text-zinc-500 dark:text-sand-400">
                 Recruitment cutoff
               </p>
             </div>
@@ -361,13 +361,13 @@ export function RoomDetailView({
 
       {/* Challenge Completed Banner */}
       {room.status === 'completed' && (
-        <div className="rounded-2xl border border-amber-200 bg-amber-50/80 p-5 shadow-sm dark:border-amber-900/50 dark:bg-amber-950/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="rounded-2xl border border-gold-200 bg-gold-50/80 p-5 shadow-sm dark:border-gold-900/50 dark:bg-gold-950/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 shrink-0">
-              <Trophy className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-100 text-gold-700 dark:bg-gold-900/50 dark:text-gold-300 shrink-0">
+              <Trophy className="h-5 w-5 text-gold-600 dark:text-gold-400" />
             </div>
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-gold-800 dark:text-gold-300">
                 Challenge Concluded
               </span>
               <p className="text-sm font-bold text-zinc-900 dark:text-white">
@@ -377,7 +377,7 @@ export function RoomDetailView({
           </div>
           <Link
             href={`/rooms/${room.id}/results`}
-            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-amber-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-amber-500 transition-colors shrink-0"
+            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gold-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-gold-500 transition-colors shrink-0"
           >
             <span>View Final Results</span>
             <ArrowRight className="h-3.5 w-3.5" />
@@ -387,13 +387,13 @@ export function RoomDetailView({
 
       {/* Challenge Ended Banner (Ready to finalize) */}
       {todayStr > room.end_date && room.status !== 'completed' && (
-        <div className="rounded-2xl border border-indigo-200 bg-indigo-50/80 p-5 shadow-sm dark:border-indigo-900/50 dark:bg-indigo-950/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="rounded-2xl border border-brand-200 bg-brand-50/80 p-5 shadow-sm dark:border-brand-900/50 dark:bg-brand-950/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 shrink-0">
-              <Trophy className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700 dark:bg-brand-900/50 dark:text-brand-300 shrink-0">
+              <Trophy className="h-5 w-5 text-brand-600 dark:text-brand-400" />
             </div>
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-800 dark:text-indigo-300">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-brand-800 dark:text-brand-300">
                 Challenge Period Ended
               </span>
               <p className="text-sm font-bold text-zinc-900 dark:text-white">
@@ -403,7 +403,7 @@ export function RoomDetailView({
           </div>
           <Link
             href={`/rooms/${room.id}/results`}
-            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors shrink-0"
+            className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gold-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors shrink-0"
           >
             <span>Finalize &amp; View Results</span>
             <ArrowRight className="h-3.5 w-3.5" />

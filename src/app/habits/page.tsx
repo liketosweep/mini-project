@@ -1,4 +1,4 @@
-﻿import { redirect } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { Navbar } from '@/components/navbar'
 import { HabitsView } from '@/components/habits/habits-view'
@@ -44,7 +44,7 @@ export default async function HabitsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col">
+    <div className="min-h-screen bg-sand-50 dark:bg-brand-950 flex flex-col">
       <Navbar profile={profile} />
 
       <main className="flex-1 mx-auto w-full max-w-6xl px-4 sm:px-6 py-8">

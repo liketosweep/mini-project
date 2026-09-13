@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -75,12 +75,12 @@ export function HabitCard({
 
   return (
     <>
-      <div className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition-all hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 flex flex-col justify-between space-y-4">
+      <div className="rounded-2xl border border-sand-200 bg-white p-5 shadow-sm transition-all hover:border-sand-300 dark:border-brand-800 dark:bg-brand-900 dark:hover:border-brand-700 flex flex-col justify-between space-y-4">
         {/* Header */}
         <div className="space-y-2">
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+              <span className="inline-flex items-center gap-1 rounded-md bg-sand-100 px-2 py-0.5 text-xs font-medium text-zinc-700 dark:bg-brand-800 dark:text-sand-300">
                 <Tag className="h-3 w-3 text-zinc-500" />
                 {habit.category || 'General'}
               </span>
@@ -91,7 +91,7 @@ export function HabitCard({
                   Done Today
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1 rounded-md bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-700 border border-amber-200 dark:bg-amber-950/40 dark:border-amber-900 dark:text-amber-300">
+                <span className="inline-flex items-center gap-1 rounded-md bg-gold-50 px-2 py-0.5 text-xs font-semibold text-gold-700 border border-gold-200 dark:bg-gold-950/40 dark:border-gold-900 dark:text-gold-300">
                   <Clock className="h-3.5 w-3.5" />
                   Pending Today
                 </span>
@@ -103,7 +103,7 @@ export function HabitCard({
               <Link
                 href={`/habits/${habit.id}/edit`}
                 title="Edit habit"
-                className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200 transition-colors"
+                className="rounded-lg p-1.5 text-zinc-400 hover:bg-sand-100 hover:text-zinc-700 dark:hover:bg-brand-800 dark:hover:text-sand-200 transition-colors"
               >
                 <Edit3 className="h-4 w-4" />
               </Link>
@@ -112,7 +112,7 @@ export function HabitCard({
                 onClick={handleArchive}
                 disabled={isArchiving}
                 title="Archive habit"
-                className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-red-600 dark:hover:bg-zinc-800 dark:hover:text-red-400 disabled:opacity-50 transition-colors"
+                className="rounded-lg p-1.5 text-zinc-400 hover:bg-sand-100 hover:text-red-600 dark:hover:bg-brand-800 dark:hover:text-red-400 disabled:opacity-50 transition-colors"
               >
                 {isArchiving ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -124,11 +124,11 @@ export function HabitCard({
           </div>
 
           <Link href={`/habits/${habit.id}`} className="group block">
-            <h3 className="font-bold text-base text-zinc-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400 transition-colors">
+            <h3 className="font-bold text-base text-zinc-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400 transition-colors">
               {habit.title}
             </h3>
             {habit.description && (
-              <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400 line-clamp-2">
+              <p className="mt-1 text-xs text-zinc-500 dark:text-sand-400 line-clamp-2">
                 {habit.description}
               </p>
             )}
@@ -136,9 +136,9 @@ export function HabitCard({
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-3 gap-2 rounded-xl bg-zinc-50 p-3 text-center dark:bg-zinc-800/60">
+        <div className="grid grid-cols-3 gap-2 rounded-xl bg-sand-50 p-3 text-center dark:bg-brand-800/60">
           <div>
-            <span className="block text-[11px] font-medium text-zinc-500 dark:text-zinc-400">
+            <span className="block text-[11px] font-medium text-zinc-500 dark:text-sand-400">
               Current
             </span>
             <div className="mt-0.5 flex items-center justify-center gap-1">
@@ -156,11 +156,11 @@ export function HabitCard({
           </div>
 
           <div>
-            <span className="block text-[11px] font-medium text-zinc-500 dark:text-zinc-400">
+            <span className="block text-[11px] font-medium text-zinc-500 dark:text-sand-400">
               Longest
             </span>
             <div className="mt-0.5 flex items-center justify-center gap-1">
-              <Trophy className="h-4 w-4 text-amber-500" />
+              <Trophy className="h-4 w-4 text-gold-500" />
               <span className="font-bold text-sm text-zinc-900 dark:text-white">
                 {habit.longest_streak}
               </span>
@@ -168,10 +168,10 @@ export function HabitCard({
           </div>
 
           <div>
-            <span className="block text-[11px] font-medium text-zinc-500 dark:text-zinc-400">
+            <span className="block text-[11px] font-medium text-zinc-500 dark:text-sand-400">
               Points
             </span>
-            <span className="mt-0.5 block font-bold text-sm text-indigo-600 dark:text-indigo-400">
+            <span className="mt-0.5 block font-bold text-sm text-brand-600 dark:text-brand-400">
               {totalPoints} pts
             </span>
           </div>
@@ -192,7 +192,7 @@ export function HabitCard({
             <button
               type="button"
               onClick={() => setIsCheckInOpen(true)}
-              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl bg-indigo-600 py-2.5 px-3 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-colors"
+              className="flex-1 flex items-center justify-center gap-1.5 rounded-xl bg-gold-500 py-2.5 px-3 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-600 transition-colors"
             >
               <CheckCircle2 className="h-4 w-4" />
               <span>Mark Done</span>
@@ -201,7 +201,7 @@ export function HabitCard({
 
           <Link
             href={`/habits/${habit.id}`}
-            className="flex items-center justify-center rounded-xl border border-zinc-200 p-2.5 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white transition-colors"
+            className="flex items-center justify-center rounded-xl border border-sand-200 p-2.5 text-zinc-600 hover:bg-sand-100 hover:text-zinc-900 dark:border-brand-800 dark:text-sand-400 dark:hover:bg-brand-800 dark:hover:text-white transition-colors"
             title="View details & logs"
           >
             <ArrowRight className="h-4 w-4" />

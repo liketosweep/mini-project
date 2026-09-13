@@ -1,4 +1,4 @@
-﻿import { format, subDays, parseISO, differenceInCalendarDays } from 'date-fns'
+import { format, subDays, parseISO, differenceInCalendarDays } from 'date-fns'
 
 /**
  * Returns a calendar date string formatted as 'YYYY-MM-DD' in the user's local timezone.

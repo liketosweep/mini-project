@@ -120,7 +120,7 @@ export function CreateRoomForm() {
     const inviteUrl = formatInviteUrl(createdRoom.inviteCode, origin)
 
     return (
-      <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-6">
+      <div className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-6">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
             <Check className="h-6 w-6" />
@@ -136,31 +136,31 @@ export function CreateRoomForm() {
         </div>
 
         {/* Private Invite Link Banner */}
-        <div className="rounded-xl border border-indigo-200 bg-indigo-50/70 p-5 dark:border-indigo-900/50 dark:bg-indigo-950/30 space-y-3">
+        <div className="rounded-xl border border-brand-200 bg-brand-50/70 p-5 dark:border-brand-900/50 dark:bg-brand-950/30 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
-              <span className="text-xs font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-300">
+              <ShieldCheck className="h-4 w-4 text-brand-600 dark:text-brand-400" />
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-900 dark:text-brand-300">
                 Private Invite Link
               </span>
             </div>
-            <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+            <span className="text-xs font-medium text-zinc-500 dark:text-sand-400">
               Invite-only (Zero public browsing)
             </span>
           </div>
 
-          <p className="text-xs text-zinc-600 dark:text-zinc-400">
+          <p className="text-xs text-zinc-600 dark:text-sand-400">
             Share this link with your friends to join this private challenge.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-            <div className="flex-1 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs font-mono text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 truncate select-all">
+            <div className="flex-1 rounded-lg border border-sand-300 bg-white px-3 py-2 text-xs font-mono text-zinc-800 dark:border-brand-700 dark:bg-brand-800 dark:text-sand-200 truncate select-all">
               {inviteUrl}
             </div>
             <button
               type="button"
               onClick={handleCopyInviteLink}
-              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors shrink-0"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-gold-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors shrink-0"
             >
               {copied ? (
                 <>
@@ -176,9 +176,9 @@ export function CreateRoomForm() {
             </button>
           </div>
 
-          <div className="flex items-center gap-2 pt-1 text-xs text-zinc-500 dark:text-zinc-400">
+          <div className="flex items-center gap-2 pt-1 text-xs text-zinc-500 dark:text-sand-400">
             <span>Invite Code:</span>
-            <span className="font-mono font-bold text-zinc-900 dark:text-white bg-white dark:bg-zinc-800 px-2 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">
+            <span className="font-mono font-bold text-zinc-900 dark:text-white bg-white dark:bg-brand-800 px-2 py-0.5 rounded border border-sand-200 dark:border-brand-700">
               {createdRoom.inviteCode}
             </span>
           </div>
@@ -192,14 +192,14 @@ export function CreateRoomForm() {
               setCreatedRoom(null)
               reset()
             }}
-            className="w-full sm:w-auto text-xs font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white py-2"
+            className="w-full sm:w-auto text-xs font-medium text-zinc-600 hover:text-zinc-900 dark:text-sand-400 dark:hover:text-white py-2"
           >
             &larr; Create another challenge
           </button>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <Link
               href="/rooms"
-              className="flex-1 sm:flex-none text-center rounded-xl border border-zinc-300 px-4 py-2.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors"
+              className="flex-1 sm:flex-none text-center rounded-xl border border-sand-300 px-4 py-2.5 text-xs font-semibold text-zinc-700 hover:bg-sand-50 dark:border-brand-700 dark:text-sand-300 dark:hover:bg-brand-800 transition-colors"
             >
               Back to Challenges
             </Link>
@@ -209,7 +209,7 @@ export function CreateRoomForm() {
                 router.push(`/rooms/${createdRoom.id}`)
                 router.refresh()
               }}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 rounded-xl bg-indigo-600 px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 rounded-xl bg-gold-500 px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors"
             >
               <span>Enter Arena</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -223,22 +223,22 @@ export function CreateRoomForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-6"
+      className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-6"
     >
       {/* Header */}
       <div className="space-y-1">
         <div className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-100 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
             <Swords className="h-4 w-4" />
           </span>
-          <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">
             New Challenge Room
           </span>
         </div>
         <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
           Create a Private Challenge
         </h1>
-        <p className="text-xs text-zinc-600 dark:text-zinc-400">
+        <p className="text-xs text-zinc-600 dark:text-sand-400">
           Compete privately with friends on a shared daily habit. Strict invite-only access.
         </p>
       </div>
@@ -255,7 +255,7 @@ export function CreateRoomForm() {
         <div className="space-y-1.5">
           <label
             htmlFor="name"
-            className="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+            className="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
           >
             Challenge Name *
           </label>
@@ -265,7 +265,7 @@ export function CreateRoomForm() {
             disabled={isSubmitting}
             placeholder="e.g. 7-Day Sprint: Clean Code Warriors"
             {...register('name')}
-            className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+            className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
           />
           {errors.name && (
             <p className="text-xs text-red-600 dark:text-red-400">{errors.name.message}</p>
@@ -277,12 +277,12 @@ export function CreateRoomForm() {
           <div className="flex items-center justify-between">
             <label
               htmlFor="habit_title"
-              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
               <Flame className="h-3.5 w-3.5 text-orange-500" />
               <span>Shared Daily Goal *</span>
             </label>
-            <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
+            <span className="text-[11px] text-zinc-500 dark:text-sand-400">
               1 check-in = 1 point
             </span>
           </div>
@@ -292,7 +292,7 @@ export function CreateRoomForm() {
             disabled={isSubmitting}
             placeholder="e.g. Solve 2 LeetCode problems daily, 30 min morning workout"
             {...register('habit_title')}
-            className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+            className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
           />
           {errors.habit_title && (
             <p className="text-xs text-red-600 dark:text-red-400">{errors.habit_title.message}</p>
@@ -303,7 +303,7 @@ export function CreateRoomForm() {
         <div className="space-y-1.5">
           <label
             htmlFor="description"
-            className="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+            className="text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
           >
             Description (Optional)
           </label>
@@ -313,7 +313,7 @@ export function CreateRoomForm() {
             disabled={isSubmitting}
             placeholder="Challenge rules, group expectations, or motivation..."
             {...register('description')}
-            className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50 resize-none"
+            className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50 resize-none"
           />
           {errors.description && (
             <p className="text-xs text-red-600 dark:text-red-400">{errors.description.message}</p>
@@ -325,12 +325,12 @@ export function CreateRoomForm() {
           <div className="flex items-center justify-between">
             <label
               htmlFor="entry_points"
-              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
-              <Trophy className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />
+              <Trophy className="h-3.5 w-3.5 text-gold-600 dark:text-gold-400" />
               <span>Virtual Entry Stake</span>
             </label>
-            <span className="text-[11px] text-amber-700 dark:text-amber-400 font-medium">
+            <span className="text-[11px] text-gold-700 dark:text-gold-400 font-medium">
               Free virtual points
             </span>
           </div>
@@ -342,9 +342,9 @@ export function CreateRoomForm() {
             disabled={isSubmitting}
             placeholder="0"
             {...register('entry_points', { valueAsNumber: true })}
-            className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+            className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
           />
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
+          <p className="text-[11px] text-zinc-500 dark:text-sand-400 flex items-center gap-1">
             <Info className="h-3 w-3 shrink-0" />
             <span>
               Virtual stake is purely for competitive motivation. No real balance is deducted.
@@ -361,9 +361,9 @@ export function CreateRoomForm() {
           <div className="space-y-1.5">
             <label
               htmlFor="start_date"
-              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
-              <Calendar className="h-3.5 w-3.5 text-indigo-600" />
+              <Calendar className="h-3.5 w-3.5 text-brand-600" />
               <span>Start Date *</span>
             </label>
             <input
@@ -371,7 +371,7 @@ export function CreateRoomForm() {
               type="date"
               disabled={isSubmitting}
               {...register('start_date')}
-              className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white disabled:opacity-50"
+              className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white disabled:opacity-50"
             />
             {errors.start_date && (
               <p className="text-xs text-red-600 dark:text-red-400">{errors.start_date.message}</p>
@@ -382,9 +382,9 @@ export function CreateRoomForm() {
           <div className="space-y-1.5">
             <label
               htmlFor="end_date"
-              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
-              <Calendar className="h-3.5 w-3.5 text-indigo-600" />
+              <Calendar className="h-3.5 w-3.5 text-brand-600" />
               <span>End Date *</span>
             </label>
             <input
@@ -392,7 +392,7 @@ export function CreateRoomForm() {
               type="date"
               disabled={isSubmitting}
               {...register('end_date')}
-              className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white disabled:opacity-50"
+              className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white disabled:opacity-50"
             />
             {errors.end_date && (
               <p className="text-xs text-red-600 dark:text-red-400">{errors.end_date.message}</p>
@@ -404,9 +404,9 @@ export function CreateRoomForm() {
         <div className="space-y-1.5">
           <label
             htmlFor="acceptance_deadline"
-            className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+            className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
           >
-            <Clock className="h-3.5 w-3.5 text-indigo-600" />
+            <Clock className="h-3.5 w-3.5 text-brand-600" />
             <span>Join Deadline (Acceptance Deadline) *</span>
           </label>
           <input
@@ -414,9 +414,9 @@ export function CreateRoomForm() {
             type="datetime-local"
             disabled={isSubmitting}
             {...register('acceptance_deadline')}
-            className="w-full rounded-xl border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white disabled:opacity-50"
+            className="w-full rounded-xl border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white disabled:opacity-50"
           />
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400">
+          <p className="text-[11px] text-zinc-500 dark:text-sand-400">
             No participants can accept or join the challenge after this time.
           </p>
           {errors.acceptance_deadline && (
@@ -428,17 +428,17 @@ export function CreateRoomForm() {
       </div>
 
       {/* Buttons */}
-      <div className="flex items-center justify-end gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+      <div className="flex items-center justify-end gap-3 pt-4 border-t border-sand-100 dark:border-brand-800">
         <Link
           href="/rooms"
-          className="rounded-xl border border-zinc-300 px-4 py-2.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors"
+          className="rounded-xl border border-sand-300 px-4 py-2.5 text-xs font-semibold text-zinc-700 hover:bg-sand-50 dark:border-brand-700 dark:text-sand-300 dark:hover:bg-brand-800 transition-colors"
         >
           Cancel
         </Link>
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-indigo-600 px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 disabled:opacity-50 transition-colors"
+          className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-gold-500 px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 disabled:opacity-50 transition-colors"
         >
           <Swords className="h-3.5 w-3.5" />
           <span>{isSubmitting ? 'Creating Room...' : 'Create Challenge Room'}</span>

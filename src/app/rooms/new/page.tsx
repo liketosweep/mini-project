@@ -1,4 +1,4 @@
-﻿import { redirect } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { Navbar } from '@/components/navbar'
@@ -25,14 +25,14 @@ export default async function NewRoomPage() {
     .single()
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col">
+    <div className="min-h-screen bg-sand-50 dark:bg-brand-950 flex flex-col">
       <Navbar profile={profile} />
 
       <main className="flex-1 mx-auto w-full max-w-2xl px-4 sm:px-6 py-8 space-y-4">
         <div>
           <Link
             href="/rooms"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 hover:text-zinc-900 dark:text-sand-400 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span>Back to Challenges</span>

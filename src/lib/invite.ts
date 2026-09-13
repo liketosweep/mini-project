@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Habit Arena - Invite Code & Link Utilities
  * Private invite-only room access helpers.
  */

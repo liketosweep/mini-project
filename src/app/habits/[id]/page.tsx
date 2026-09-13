@@ -49,7 +49,7 @@ export default async function HabitDetailPage({ params }: HabitDetailPageProps) 
     .order('check_in_date', { ascending: false })
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col">
+    <div className="min-h-screen bg-sand-50 dark:bg-brand-950 flex flex-col">
       <Navbar profile={profile} />
 
       <main className="flex-1 mx-auto w-full max-w-4xl px-4 sm:px-6 py-8">

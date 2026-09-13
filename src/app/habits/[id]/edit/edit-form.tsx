@@ -74,19 +74,19 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
       <div className="flex items-center justify-between">
         <Link
           href={`/habits/${habit.id}`}
-          className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+          className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-600 hover:text-zinc-900 dark:text-sand-400 dark:hover:text-white"
         >
           <ArrowLeft className="h-4 w-4" />
           <span>Cancel and return to habit</span>
         </Link>
       </div>
 
-      <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-6">
+      <div className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-6">
         <div className="space-y-1">
           <h1 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
             Edit Habit
           </h1>
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+          <p className="text-xs text-zinc-500 dark:text-sand-400">
             Update your habit details. Historical check-in records will remain preserved.
           </p>
         </div>
@@ -110,7 +110,7 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
           <div className="space-y-1.5">
             <label
               htmlFor="title"
-              className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
               Habit Title <span className="text-red-500">*</span>
             </label>
@@ -119,7 +119,7 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
               type="text"
               disabled={isSubmitting}
               {...register('title')}
-              className="w-full rounded-lg border border-zinc-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+              className="w-full rounded-lg border border-sand-300 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
             />
             {errors.title && (
               <p className="text-xs text-red-600 dark:text-red-400">{errors.title.message}</p>
@@ -130,7 +130,7 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
           <div className="space-y-2">
             <label
               htmlFor="category"
-              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
               <Tag className="h-3.5 w-3.5" />
               <span>Category</span>
@@ -140,7 +140,7 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
               type="text"
               disabled={isSubmitting}
               {...register('category')}
-              className="w-full rounded-lg border border-zinc-300 px-3.5 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
+              className="w-full rounded-lg border border-sand-300 px-3.5 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50"
             />
             {/* Quick pills */}
             <div className="flex flex-wrap gap-1.5 pt-1">
@@ -154,8 +154,8 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
                   }}
                   className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${
                     selectedCategory === cat
-                      ? 'bg-indigo-50 border-indigo-300 text-indigo-700 dark:bg-indigo-950/50 dark:border-indigo-800 dark:text-indigo-300'
-                      : 'border-zinc-200 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-800'
+                      ? 'bg-brand-50 border-brand-300 text-brand-700 dark:bg-brand-950/50 dark:border-brand-800 dark:text-brand-300'
+                      : 'border-sand-200 text-zinc-600 hover:bg-sand-50 dark:border-brand-800 dark:text-sand-400 dark:hover:bg-brand-800'
                   }`}
                 >
                   {cat}
@@ -171,7 +171,7 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
           <div className="space-y-1.5">
             <label
               htmlFor="description"
-              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-zinc-300"
+              className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-zinc-700 dark:text-sand-300"
             >
               <AlignLeft className="h-3.5 w-3.5" />
               <span>Description (Optional)</span>
@@ -182,7 +182,7 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
               maxLength={300}
               disabled={isSubmitting}
               {...register('description')}
-              className="w-full rounded-lg border border-zinc-300 p-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50 resize-none"
+              className="w-full rounded-lg border border-sand-300 p-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-800 dark:text-white dark:placeholder:text-zinc-500 disabled:opacity-50 resize-none"
             />
             {errors.description && (
               <p className="text-xs text-red-600 dark:text-red-400">
@@ -191,17 +191,17 @@ export function EditHabitForm({ habit }: EditHabitFormProps) {
             )}
           </div>
 
-          <div className="flex items-center justify-end gap-2 pt-3 border-t border-zinc-100 dark:border-zinc-800">
+          <div className="flex items-center justify-end gap-2 pt-3 border-t border-sand-100 dark:border-brand-800">
             <Link
               href={`/habits/${habit.id}`}
-              className="rounded-lg border border-zinc-200 px-4 py-2 text-xs font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors"
+              className="rounded-lg border border-sand-200 px-4 py-2 text-xs font-medium text-zinc-700 hover:bg-sand-50 dark:border-brand-800 dark:text-sand-300 dark:hover:bg-brand-800 transition-colors"
             >
               Cancel
             </Link>
             <button
               type="submit"
               disabled={isSubmitting || !isDirty}
-              className="flex items-center gap-1.5 rounded-lg bg-indigo-600 px-5 py-2 text-xs font-semibold text-white shadow hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 disabled:opacity-50 transition-colors"
+              className="flex items-center gap-1.5 rounded-lg bg-gold-500 px-5 py-2 text-xs font-semibold text-white shadow hover:bg-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-600 disabled:opacity-50 transition-colors"
             >
               {isSubmitting ? (
                 <>

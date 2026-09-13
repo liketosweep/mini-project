@@ -47,17 +47,17 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-100 text-brand-600 dark:bg-brand-950/60 dark:text-brand-400">
               <Swords className="h-4 w-4" />
             </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">
               Multiplayer Arenas
             </span>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">
             Challenge Rooms
           </h1>
-          <p className="text-xs text-zinc-600 dark:text-zinc-400">
+          <p className="text-xs text-zinc-600 dark:text-sand-400">
             Private, invite-only social competitions. Maximum 1 check-in per day = 1 point.
           </p>
         </div>
@@ -65,7 +65,7 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
         <div className="flex items-center gap-2.5">
           <Link
             href="/rooms/new"
-            className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-gold-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors"
           >
             <Plus className="h-4 w-4" />
             <span>Create Challenge</span>
@@ -76,7 +76,7 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
       {/* Quick Join Bar & Status Tabs */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 pt-1">
         {/* Status Filter Tabs */}
-        <div className="flex items-center gap-1 overflow-x-auto rounded-xl bg-zinc-100 p-1 dark:bg-zinc-800/80 text-xs font-medium">
+        <div className="flex items-center gap-1 overflow-x-auto rounded-xl bg-sand-100 p-1 dark:bg-brand-800/80 text-xs font-medium">
           {(['all', 'recruiting', 'active', 'completed'] as const).map((tab) => {
             const count =
               tab === 'all'
@@ -89,12 +89,12 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
                 onClick={() => setFilter(tab)}
                 className={`rounded-lg px-3 py-1.5 transition-colors capitalize whitespace-nowrap flex items-center gap-1.5 ${
                   filter === tab
-                    ? 'bg-white text-zinc-900 shadow-sm dark:bg-zinc-900 dark:text-white font-bold'
-                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+                    ? 'bg-white text-zinc-900 shadow-sm dark:bg-brand-900 dark:text-white font-bold'
+                    : 'text-zinc-600 hover:text-zinc-900 dark:text-sand-400 dark:hover:text-white'
                 }`}
               >
                 <span>{tab}</span>
-                <span className="rounded-full bg-zinc-200/70 dark:bg-zinc-700/60 px-1.5 py-0.2 text-[10px]">
+                <span className="rounded-full bg-sand-200/70 dark:bg-brand-700/60 px-1.5 py-0.2 text-[10px]">
                   {count}
                 </span>
               </button>
@@ -114,12 +114,12 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
                 setInviteCodeInput(e.target.value)
                 if (inviteError) setInviteError(null)
               }}
-              className="w-full rounded-xl border border-zinc-200 bg-white pl-9 pr-3 py-1.5 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white font-mono"
+              className="w-full rounded-xl border border-sand-200 bg-white pl-9 pr-3 py-1.5 text-xs text-zinc-900 placeholder:text-zinc-400 focus:border-brand-600 focus:outline-none focus:ring-1 focus:ring-brand-600 dark:border-brand-700 dark:bg-brand-900 dark:text-white font-mono"
             />
           </div>
           <button
             type="submit"
-            className="inline-flex items-center gap-1 rounded-xl border border-zinc-200 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 transition-colors shrink-0"
+            className="inline-flex items-center gap-1 rounded-xl border border-sand-200 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-700 hover:bg-sand-50 dark:border-brand-700 dark:bg-brand-900 dark:text-sand-200 dark:hover:bg-brand-800 transition-colors shrink-0"
           >
             <span>Join</span>
             <ArrowRight className="h-3 w-3" />
@@ -134,15 +134,15 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
       {/* Grid of Rooms */}
       {rooms.length === 0 ? (
         /* Zero Rooms State */
-        <div className="rounded-2xl border border-dashed border-zinc-300 bg-white p-10 text-center dark:border-zinc-800 dark:bg-zinc-900 space-y-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 mx-auto dark:bg-indigo-950/60 dark:text-indigo-400">
+        <div className="rounded-2xl border border-dashed border-sand-300 bg-white p-10 text-center dark:border-brand-800 dark:bg-brand-900 space-y-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 mx-auto dark:bg-brand-950/60 dark:text-brand-400">
             <Swords className="h-6 w-6" />
           </div>
           <div className="space-y-1 max-w-md mx-auto">
             <h3 className="font-bold text-base text-zinc-900 dark:text-white">
               No Challenge Rooms Yet
             </h3>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="text-xs text-zinc-600 dark:text-sand-400 leading-relaxed">
               Habit Arena challenge rooms are strictly private and invite-only. Create your own challenge to invite friends, or enter an invite code to join one.
             </p>
           </div>
@@ -150,7 +150,7 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <Link
               href="/rooms/new"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-gold-500 px-4 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors"
             >
               <Plus className="h-4 w-4" />
               <span>Create Your First Challenge</span>
@@ -159,9 +159,9 @@ export function RoomsView({ rooms, currentUserId, participantCounts }: RoomsView
         </div>
       ) : filteredRooms.length === 0 ? (
         /* Filter Empty State */
-        <div className="rounded-2xl border border-dashed border-zinc-200 bg-white p-8 text-center dark:border-zinc-800 dark:bg-zinc-900 space-y-2">
+        <div className="rounded-2xl border border-dashed border-sand-200 bg-white p-8 text-center dark:border-brand-800 dark:bg-brand-900 space-y-2">
           <Search className="h-6 w-6 text-zinc-400 mx-auto" />
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+          <p className="text-xs text-zinc-500 dark:text-sand-400">
             No challenge rooms found in status &ldquo;{filter}&rdquo;.
           </p>
         </div>

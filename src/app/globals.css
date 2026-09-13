@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbf8f3;
+  --foreground: #1f2a44;
 }
 
 @theme inline {
@@ -10,12 +10,51 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand navy — anchored on given Navy (700) */
+  --color-brand-50: #eef0f4;
+  --color-brand-100: #dde1ea;
+  --color-brand-200: #b9c1d3;
+  --color-brand-300: #96a2bc;
+  --color-brand-400: #6d7ca0;
+  --color-brand-500: #4c5c82;
+  --color-brand-600: #384868;
+  --color-brand-700: #1f2a44;
+  --color-brand-800: #161f33;
+  --color-brand-900: #0e1522;
+  --color-brand-950: #080b14;
+
+  /* Gold accent — anchored on given Soft Gold (500) */
+  --color-gold-50: #fbf6ea;
+  --color-gold-100: #f4eacb;
+  --color-gold-200: #e6d29c;
+  --color-gold-300: #d9be78;
+  --color-gold-400: #ceb068;
+  --color-gold-500: #c6a75e;
+  --color-gold-600: #a98a46;
+  --color-gold-700: #866b35;
+  --color-gold-800: #614d27;
+  --color-gold-900: #40331a;
+  --color-gold-950: #241d0f;
+
+  /* Warm neutral — anchored on given Warm Beige (200) */
+  --color-sand-50: #fbf8f3;
+  --color-sand-100: #f5efe4;
+  --color-sand-200: #e8dcc8;
+  --color-sand-300: #d8c7a9;
+  --color-sand-400: #c2ac87;
+  --color-sand-500: #a88f68;
+  --color-sand-600: #86704f;
+  --color-sand-700: #64533b;
+  --color-sand-800: #453828;
+  --color-sand-900: #2a211a;
+  --color-sand-950: #17120d;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #080b14;
+    --foreground: #f5efe4;
   }
 }
 

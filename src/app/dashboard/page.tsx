@@ -62,12 +62,12 @@ export default async function DashboardPage() {
   ).length
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col">
+    <div className="min-h-screen bg-sand-50 dark:bg-brand-950 flex flex-col">
       <Navbar profile={profile} />
 
       <main className="flex-1 mx-auto w-full max-w-6xl px-4 sm:px-6 py-8 space-y-6">
         {/* Welcome Banner */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="rounded-2xl border border-sand-200 bg-white p-6 sm:p-8 shadow-sm dark:border-brand-800 dark:bg-brand-900">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
@@ -78,24 +78,24 @@ export default async function DashboardPage() {
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
                 Welcome, {profile?.display_name || 'Arena Warrior'}!
               </h1>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+              <p className="text-sm text-zinc-600 dark:text-sand-400">
                 Logged in as <span className="font-mono text-xs">@{profile?.username || 'user'}</span> ({user.email})
               </p>
             </div>
 
             {/* Virtual Reward Points Card */}
-            <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-4 dark:border-amber-900/50 dark:bg-amber-950/30 sm:min-w-[200px]">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-800 dark:text-amber-300">
-                <Trophy className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+            <div className="rounded-xl border border-gold-200 bg-gold-50/70 p-4 dark:border-gold-900/50 dark:bg-gold-950/30 sm:min-w-[200px]">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gold-800 dark:text-gold-300">
+                <Trophy className="h-4 w-4 text-gold-600 dark:text-gold-400" />
                 <span>Virtual Reward Points</span>
               </div>
               <div className="mt-1 flex items-baseline gap-1">
-                <span className="text-3xl font-extrabold text-amber-900 dark:text-amber-200">
+                <span className="text-3xl font-extrabold text-gold-900 dark:text-gold-200">
                   {profile?.virtual_points ?? 0}
                 </span>
-                <span className="text-xs font-medium text-amber-700 dark:text-amber-400">pts</span>
+                <span className="text-xs font-medium text-gold-700 dark:text-gold-400">pts</span>
               </div>
-              <p className="mt-1 text-[11px] text-amber-700/80 dark:text-amber-400/70">
+              <p className="mt-1 text-[11px] text-gold-700/80 dark:text-gold-400/70">
                 Earned from winning challenge rooms. Free virtual rewards only.
               </p>
             </div>
@@ -103,8 +103,8 @@ export default async function DashboardPage() {
         </div>
 
         {/* Section: Your Habits */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-4">
+        <div className="rounded-2xl border border-sand-200 bg-white p-6 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-sand-100 dark:border-brand-800 pb-4">
             <div className="space-y-0.5">
               <div className="flex items-center gap-2">
                 <Flame className="h-5 w-5 text-orange-500" />
@@ -112,12 +112,12 @@ export default async function DashboardPage() {
                   Your Solo Habits
                 </h2>
                 {activeHabits.length > 0 && (
-                  <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+                  <span className="rounded-full bg-sand-100 px-2 py-0.5 text-xs font-semibold text-zinc-700 dark:bg-brand-800 dark:text-sand-300">
                     {completedTodayCount} of {activeHabits.length} Done Today
                   </span>
                 )}
               </div>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              <p className="text-xs text-zinc-500 dark:text-sand-400">
                 Self-reported daily progress and personal streaks.
               </p>
             </div>
@@ -125,7 +125,7 @@ export default async function DashboardPage() {
             <div className="flex items-center gap-2">
               <Link
                 href="/habits"
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 px-2.5 py-1.5 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                className="text-xs font-semibold text-brand-600 hover:text-brand-500 dark:text-brand-400 px-2.5 py-1.5 rounded-lg hover:bg-sand-50 dark:hover:bg-brand-800 transition-colors"
               >
                 View All Habits &rarr;
               </Link>
@@ -133,19 +133,19 @@ export default async function DashboardPage() {
           </div>
 
           {activeHabits.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-zinc-200 p-8 text-center dark:border-zinc-800 space-y-3">
-              <Sparkles className="h-7 w-7 text-indigo-600 mx-auto" />
+            <div className="rounded-xl border border-dashed border-sand-200 p-8 text-center dark:border-brand-800 space-y-3">
+              <Sparkles className="h-7 w-7 text-brand-600 mx-auto" />
               <div className="space-y-1 max-w-sm mx-auto">
                 <h3 className="font-semibold text-sm text-zinc-900 dark:text-white">
                   No habits set up yet
                 </h3>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                <p className="text-xs text-zinc-500 dark:text-sand-400">
                   Create your first solo habit to start tracking daily check-ins and streaks.
                 </p>
               </div>
               <Link
                 href="/habits"
-                className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-gold-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors"
               >
                 <Plus className="h-4 w-4" />
                 <span>Go to Habits</span>
@@ -161,11 +161,11 @@ export default async function DashboardPage() {
                   <Link
                     key={habit.id}
                     href={`/habits/${habit.id}`}
-                    className="group rounded-xl border border-zinc-200 bg-zinc-50/60 p-4 transition-all hover:bg-white hover:border-zinc-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-800/40 dark:hover:bg-zinc-800 dark:hover:border-zinc-700 flex flex-col justify-between space-y-3"
+                    className="group rounded-xl border border-sand-200 bg-sand-50/60 p-4 transition-all hover:bg-white hover:border-sand-300 hover:shadow-sm dark:border-brand-800 dark:bg-brand-800/40 dark:hover:bg-brand-800 dark:hover:border-brand-700 flex flex-col justify-between space-y-3"
                   >
                     <div className="space-y-1">
                       <div className="flex items-center justify-between">
-                        <span className="rounded bg-zinc-200/80 px-2 py-0.5 text-[11px] font-medium text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300">
+                        <span className="rounded bg-sand-200/80 px-2 py-0.5 text-[11px] font-medium text-zinc-700 dark:bg-brand-700 dark:text-sand-300">
                           {habit.category || 'General'}
                         </span>
                         {doneToday ? (
@@ -173,12 +173,12 @@ export default async function DashboardPage() {
                             <CheckCircle2 className="h-3.5 w-3.5" /> Done
                           </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-600 dark:text-amber-400">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-medium text-gold-600 dark:text-gold-400">
                             <Clock className="h-3.5 w-3.5" /> Pending
                           </span>
                         )}
                       </div>
-                      <h3 className="font-bold text-sm text-zinc-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
+                      <h3 className="font-bold text-sm text-zinc-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400 transition-colors line-clamp-1">
                         {habit.title}
                       </h3>
                     </div>
@@ -196,7 +196,7 @@ export default async function DashboardPage() {
                           {streak} day streak
                         </span>
                       </div>
-                      <span className="text-zinc-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 font-semibold flex items-center gap-0.5">
+                      <span className="text-zinc-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 font-semibold flex items-center gap-0.5">
                         Open <ArrowRight className="h-3 w-3" />
                       </span>
                     </div>
@@ -208,21 +208,21 @@ export default async function DashboardPage() {
         </div>
 
         {/* Section: Challenge Arenas */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-4">
+        <div className="rounded-2xl border border-sand-200 bg-white p-6 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-sand-100 dark:border-brand-800 pb-4">
             <div className="space-y-0.5">
               <div className="flex items-center gap-2">
-                <Swords className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                <Swords className="h-5 w-5 text-brand-600 dark:text-brand-400" />
                 <h2 className="text-base font-bold text-zinc-900 dark:text-white">
                   Challenge Arenas
                 </h2>
                 {userRooms.length > 0 && (
-                  <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+                  <span className="rounded-full bg-sand-100 px-2 py-0.5 text-xs font-semibold text-zinc-700 dark:bg-brand-800 dark:text-sand-300">
                     {userRooms.length} Active / Joined
                   </span>
                 )}
               </div>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              <p className="text-xs text-zinc-500 dark:text-sand-400">
                 Private multiplayer habit battles with friendly virtual stakes.
               </p>
             </div>
@@ -230,7 +230,7 @@ export default async function DashboardPage() {
             <div className="flex items-center gap-2">
               <Link
                 href="/rooms"
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 px-2.5 py-1.5 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
+                className="text-xs font-semibold text-brand-600 hover:text-brand-500 dark:text-brand-400 px-2.5 py-1.5 rounded-lg hover:bg-sand-50 dark:hover:bg-brand-800 transition-colors"
               >
                 View All Arenas &rarr;
               </Link>
@@ -238,19 +238,19 @@ export default async function DashboardPage() {
           </div>
 
           {userRooms.length === 0 ? (
-            <div className="rounded-xl border border-dashed border-zinc-200 p-8 text-center dark:border-zinc-800 space-y-3">
-              <Swords className="h-7 w-7 text-indigo-600 mx-auto" />
+            <div className="rounded-xl border border-dashed border-sand-200 p-8 text-center dark:border-brand-800 space-y-3">
+              <Swords className="h-7 w-7 text-brand-600 mx-auto" />
               <div className="space-y-1 max-w-sm mx-auto">
                 <h3 className="font-semibold text-sm text-zinc-900 dark:text-white">
                   No challenge rooms yet
                 </h3>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                <p className="text-xs text-zinc-500 dark:text-sand-400">
                   Create a private challenge to compete with friends, or join one with an invite code.
                 </p>
               </div>
               <Link
                 href="/rooms"
-                className="inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-gold-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-500 transition-colors"
               >
                 <Plus className="h-4 w-4" />
                 <span>Go to Challenges</span>
@@ -262,21 +262,21 @@ export default async function DashboardPage() {
                 <Link
                   key={room.id}
                   href={`/rooms/${room.id}`}
-                  className="group rounded-xl border border-zinc-200 bg-zinc-50/60 p-4 transition-all hover:bg-white hover:border-zinc-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-800/40 dark:hover:bg-zinc-800 dark:hover:border-zinc-700 flex flex-col justify-between space-y-3"
+                  className="group rounded-xl border border-sand-200 bg-sand-50/60 p-4 transition-all hover:bg-white hover:border-sand-300 hover:shadow-sm dark:border-brand-800 dark:bg-brand-800/40 dark:hover:bg-brand-800 dark:hover:border-brand-700 flex flex-col justify-between space-y-3"
                 >
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
-                      <span className="rounded bg-zinc-200/80 px-2 py-0.5 text-[11px] font-medium text-zinc-700 dark:bg-zinc-700 dark:text-zinc-300 capitalize">
+                      <span className="rounded bg-sand-200/80 px-2 py-0.5 text-[11px] font-medium text-zinc-700 dark:bg-brand-700 dark:text-sand-300 capitalize">
                         {room.status}
                       </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 dark:text-amber-400">
+                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-gold-700 dark:text-gold-400">
                         <Trophy className="h-3 w-3" /> {room.points_pool} pts pool
                       </span>
                     </div>
-                    <h3 className="font-bold text-sm text-zinc-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
+                    <h3 className="font-bold text-sm text-zinc-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400 transition-colors line-clamp-1">
                       {room.name}
                     </h3>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                    <p className="text-xs text-zinc-500 dark:text-sand-400 line-clamp-1">
                       Goal: {room.habit_title}
                     </p>
                   </div>
@@ -285,7 +285,7 @@ export default async function DashboardPage() {
                     <span className="text-[11px] text-zinc-400">
                       {room.start_date} to {room.end_date}
                     </span>
-                    <span className="text-zinc-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 font-semibold flex items-center gap-0.5">
+                    <span className="text-zinc-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 font-semibold flex items-center gap-0.5">
                       Enter <ArrowRight className="h-3 w-3" />
                     </span>
                   </div>
@@ -297,51 +297,51 @@ export default async function DashboardPage() {
 
         {/* Profile Summary Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-4">
+          <div className="rounded-2xl border border-sand-200 bg-white p-6 shadow-sm dark:border-brand-800 dark:bg-brand-900 space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-base font-semibold text-zinc-900 dark:text-white flex items-center gap-2">
-                <User className="h-4 w-4 text-indigo-600" /> Profile Summary
+                <User className="h-4 w-4 text-brand-600" /> Profile Summary
               </h2>
               <Link
                 href="/profile"
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400"
+                className="text-xs font-semibold text-brand-600 hover:text-brand-500 dark:text-brand-400"
               >
                 Edit Profile &rarr;
               </Link>
             </div>
 
-            <div className="divide-y divide-zinc-100 dark:divide-zinc-800 text-sm">
+            <div className="divide-y divide-sand-100 dark:divide-brand-800 text-sm">
               <div className="py-2.5 flex justify-between">
-                <span className="text-zinc-500 dark:text-zinc-400">Display Name</span>
+                <span className="text-zinc-500 dark:text-sand-400">Display Name</span>
                 <span className="font-medium text-zinc-900 dark:text-white">{profile?.display_name || '—'}</span>
               </div>
               <div className="py-2.5 flex justify-between">
-                <span className="text-zinc-500 dark:text-zinc-400">Username</span>
+                <span className="text-zinc-500 dark:text-sand-400">Username</span>
                 <span className="font-mono text-zinc-900 dark:text-white">@{profile?.username || '—'}</span>
               </div>
               <div className="py-2.5 flex justify-between">
-                <span className="text-zinc-500 dark:text-zinc-400">Account Email</span>
+                <span className="text-zinc-500 dark:text-sand-400">Account Email</span>
                 <span className="font-medium text-zinc-900 dark:text-white">{user.email}</span>
               </div>
               <div className="py-2.5 flex justify-between">
-                <span className="text-zinc-500 dark:text-zinc-400">Earned Rewards</span>
-                <span className="font-semibold text-amber-700 dark:text-amber-400">{profile?.virtual_points ?? 0} pts</span>
+                <span className="text-zinc-500 dark:text-sand-400">Earned Rewards</span>
+                <span className="font-semibold text-gold-700 dark:text-gold-400">{profile?.virtual_points ?? 0} pts</span>
               </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-dashed border-zinc-300 bg-white/50 p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50 space-y-4 flex flex-col justify-between">
+          <div className="rounded-2xl border border-dashed border-sand-300 bg-white/50 p-6 shadow-sm dark:border-brand-800 dark:bg-brand-900/50 space-y-4 flex flex-col justify-between">
             <div className="space-y-2">
               <h2 className="text-base font-semibold text-zinc-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-indigo-600" /> Habit Arena Rules
+                <Sparkles className="h-4 w-4 text-brand-600" /> Habit Arena Rules
               </h2>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-600 dark:text-sand-400 leading-relaxed">
                 1 successful check-in = 1 completion point. Check in once per day to keep your consecutive personal streaks burning!
               </p>
             </div>
 
-            <div className="rounded-lg bg-zinc-100 dark:bg-zinc-800/80 p-3.5 text-xs text-zinc-600 dark:text-zinc-400 flex items-center gap-3">
-              <Flame className="h-5 w-5 text-indigo-600 shrink-0" />
+            <div className="rounded-lg bg-sand-100 dark:bg-brand-800/80 p-3.5 text-xs text-zinc-600 dark:text-sand-400 flex items-center gap-3">
+              <Flame className="h-5 w-5 text-brand-600 shrink-0" />
               <span>
                 Unlimited virtual points model enabled. No balance deduction and no insufficient-balance errors.
               </span>
